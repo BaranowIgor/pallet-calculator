@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+}
+
+.navbar {
+  position:fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.feature > * {
+  text-align: center;
+}
+
+
+#boxForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-radius: 8px;
+  padding: 10px 10px 30px 10px;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+  max-width: 500px;
+  margin: auto;
+}
+
+#boxForm h4 {
+  text-align: center;
+  padding: 15px 8px 3px 8px;
+}
+
+.container > h2 {
+  margin-bottom: 30px;
+}
+
+.inputBox {
+  position: relative;
+  width: 250px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1em;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  color: #007bff;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65em;
+  padding: 0 10px;
+  background: white;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  border-left: 1px solid #007bff;
+  border-right: 1px solid #007bff;
+}
+
+.calculateBtn {
+  margin: 10px 0;
+}
+
+#resultsBox {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+  background-color: rgb(249, 241, 229);
+  padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  animation: slideDown 0.7s ease-in-out;
+  margin-top: -110px;
+  padding: 35px 20px 0 35px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  } to {
+    transform: translateY(0);
+  }
+}
+
+#maxBoxesResult {
+  font-size: 1.325em;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#resultsFreeHeight h6 {
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+#resultsFreeHeight p {
+  color:red;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+

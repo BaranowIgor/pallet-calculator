@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stack It</title>
+  <link rel="icon" href="images/box-seam.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="./app.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./"><img src="images/box-seam.svg" alt="brand-boxicon" height="30"> Stack It</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#calculator">Calculator</a>
+          </li>
+      </div>
+    </div>
+  </nav>
+
+  <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-body-emphasis">Box Stacking Made Brilliantly Simple</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Welcome to our innovative pallet box stacking calculator, designed to revolutionize the way you pack and optimize your shipments.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <a href="#calculator">
+          <button type="button" class="btn btn-primary d-inline-flex btn-lg px-4 me-sm-3"> Start Calculation</button>
+        </a>
+        <a href="mailto:baranow.ig@gmail.com">
+          <button type="button" class="btn btn-outline-secondary d-inline-flex btn-lg px-4">Contact Us</button>
+        </a>
+      </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 50vh;">
+      <div class="container px-5">
+        <img src="images/main3.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Why Stack With Us?</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon fs-2 mb-3">
+          <img src="images/box.png" alt="" height="60">
+        </div>
+        <h3 class="fs-2">Efficient Box Placement and Rotation</h3>
+        <p>Discover the power of precision in box stacking! Our app isn't just about calculating the number of boxes that can fit on a pallet; it's about optimizing their placement too. We dynamically rotate boxes to find the best orientation, ensuring every inch of your pallet is utilized effectively. Say goodbye to wasted space and hello to smarter stacking.</p>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon fs-2 mb-3">
+          <img src="images/rotation.png" alt="" height="60">
+        </div>
+        <h3 class="fs-2">Maximizing Every Nook and Cranny</h3>
+        <p>We take stacking to the next level by making the most out of any remaining space. If our primary arrangement leaves gaps, our algorithms step in. Our intelligent system identifies these openings and strategically rotates and adds boxes to fill them up. This means no valuable space is left unused – a clever touch that translates to cost savings and efficient transport.</p>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon fs-2 mb-3">
+          <img src="images/stack.png" alt="" height="60">
+        </div>
+        <h3 class="fs-2">Tailored Solutions for Your Cargo</h3>
+        <p>Don't settle for one-size-fits-all solutions. Our app adapts to your cargo's unique dimensions and weight. Whether you're dealing with various box sizes or weights, our calculations are tailored to ensure you're maximizing your pallet's capacity. With our tool, you're not just stacking boxes; you're crafting a custom arrangement that suits your cargo perfectly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="calculator" class="container px-4 py-5">
+    <h2>Calculate Maximum Boxes on Pallet</h2>
+    <form id="boxForm">
+      <h4>Specify pallet and box dimensions </h4>
+      <div class="inputBox">
+        <input type="number" id="palletLength" min="1" required>  <!--type="number" used to allow users input only numbers and it tells brousers which keyboard open on phones. This type="number" doesn't make type of this input as a int, it's still string. To make it integer and be able to make calculation I have to make it int. There is 2 ways to do this: by JS parsetInt or .valueAsNumber  -->
+        <span>Pallet Length (mm):</span>
+      </div>
+      <div class="inputBox">
+        <input type="number" id="palletWidth" min="1" required>
+        <span>Pallet Width (mm):</span>
+      </div>
+      <div class="inputBox">
+        <input type="number" id="palletHeight" min="1" required>
+        <span>Loading Height (mm):</span>
+      </div>
+      <div class="inputBox">
+        <input type="number" id="boxLength" min="1" required>
+        <span>Box Length (mm):</span>
+      </div>
+      <div class="inputBox">
+        <input type="number" id="boxWidth" min="1" required>
+        <span>Box Width (mm):</span>
+      </div>
+      <div class="inputBox">
+        <input type="number" id="boxHeight" min="1" required>
+        <span>Box Height (mm):</span>
+      </div>
+      <div class="inputBox">
+        <input type="number" id="boxWeight" min="1" required>
+        <span>Box Weight (kg):</span>
+      </div>
+      <div class="inputBox">
+        <input type="number" id="maxLoadWeight" min="1" required>
+        <span>Max Load Weight (kg):</span>
+      </div>
+      <button type="submit" class="calculateBtn btn btn-primary btn-lg px-4 me-sm-3">Calculate</button>
+    </form>
+  </div>
+
+    <div class="container px-4 py-5">
+      <div id="resultsBox">
+        <div id="error"></div>
+        
+        <p id="maxBoxesResult"><p/>
+  
+        <p id="resultsFreePallet"></p>
+        <p id="resultsFreeHeight"></p>
+        <p id="resultsFreeWidth"></p>
+        <p id="resultsFreeLength"></p>
+  
+  
+  
+        <p id="maxBoxesDescription"></p>
+
+        <p id="numOfWaysToStackBoxes"></p>
+        
+        <p id="resultFirstWay"></p>
+        <p id="maxBoxesOnFloorFirstWay"></p>
+        <p id="maxLayersFirstWay"></p>
+        <p id="instructions"></p>
+        
+        <p id="resultSecondWay"></p>
+        <p id="maxBoxesOnFloorSecondWay"></p>
+        <p id="maxLayersSecondWay"></p>
+        <p id="instructionsForFreeHeight"></p>
+      </div>
+    </div>
+
+    <footer class="container px-4 py-5">
+        <div class="footer">
+          <p>&copy; 2023 by Igor Baranow. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+
+ 
+
+
+  
+
+</body>
+</html>
+
+
+
